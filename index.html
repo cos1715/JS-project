@@ -1,13 +1,44 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="./src/scss/index.css">
+  <link rel="stylesheet" href="./src/scss/checkbox.css">
+  <title>TO DO NOTE</title>
 </head>
+
 <body>
-  <h1>project-scaffoldings</h1>
+
+
+  <header class="app-header">
+    <div id="clock-display" class="header-clock"></div>
+    <div id="date-display" class="header-date"></div>
+  </header>
+  <main class="app-main">
+    <label for="todo-input" class="main-label">What's on your mind?</label>
+    <input type="text" id="todo-input" class="main-input" maxlength="40" />
+    <section id="todo-list-section" class="main-section">
+      <ul id="todo-list" class="main-section-ul">
+        <li class="section-ul-li">
+          <label class="list-item-label">
+            1 2 3 4 5 6 7 8 9 10
+            <input type="checkbox" class="list-item-checkbox" />
+            <span class="list-item-checkmark"></span>
+          </label>
+          <i class="fas fa-times list-item-remove-icon"></i>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+
+  <script src="./src/main.js"></script>
 </body>
+
 </html>
