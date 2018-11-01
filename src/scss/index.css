@@ -6,7 +6,6 @@ body {
   height: 90vh;
   color: #fff;
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-  /* background-color: #000; */
   background-size: 400% 400%;
   font-family: 'Lato', sans-serif;
   font-size: 10px;
@@ -34,11 +33,22 @@ body {
 .header-clock {
   font-size: 12rem;
   user-select: none;
+  transition: all 1s;
 }
 
 .header-date {
   font-size: 2rem;
   user-select: none;
+  transition: all 1s;
+}
+
+@media screen and (max-width: 768px) {
+  .header-clock {
+    font-size: 30vw;
+  }
+  .header-date {
+    font-size: 10vw;
+  }
 }
 
 .app-main {
@@ -82,6 +92,15 @@ body {
 
 .main-section-active {
   width: 45rem;
+}
+
+@media screen and (max-width: 768px) {
+  .main-input {
+    width: 90vw;
+  }
+  .main-section-active {
+    width: 90vw;
+  }
 }
 
 .main-section-ul {
