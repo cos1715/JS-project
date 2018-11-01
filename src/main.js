@@ -49,7 +49,7 @@ const createTag = ({ key, target }) => {
     $todoList.appendChild($el);
     $el.classList.add('opacity-to-one');
     $todoInput.value = '';
-
+    $todoInput.blur();
   }
 };
 
