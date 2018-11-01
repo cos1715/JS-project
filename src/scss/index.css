@@ -85,13 +85,30 @@ body {
 }
 
 .main-section-ul {
-  list-style-type: none;
+  height: 0px;
   padding: 0 2rem;
+  list-style-type: none;
+  transition: all .6s;
 }
 
 .section-ul-li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4.5rem;
+  height: 3rem;
+}
+
+.opacity-to-one {
+  animation-name: opacityToOne;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes opacityToOne {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

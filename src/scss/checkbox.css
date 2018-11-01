@@ -38,9 +38,13 @@
   opacity: 1;
 }
 
+.list-item-label .list-item-checkbox:checked+.list-item-text {
+  text-decoration: line-through;
+}
+
 .list-item-label .list-item-checkmark:after {
-  top: -8px;
-  width: 5px;
+  top: -0.5rem;
+  width: 0.5rem;
 }
 
 .list-item-remove-icon {
