@@ -48,8 +48,10 @@ const createTag = ({ key, target }) => {
     $todoList.style.height = `${height}px`;
     $todoList.appendChild($el);
     $el.classList.add('opacity-to-one');
-    $todoInput.value = '';
-    $todoInput.blur();
+    $el.addEventListener('animationend', () => {
+      $todoInput.value = '';
+      $todoInput.blur();
+    });
   }
 };
 

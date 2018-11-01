@@ -119,7 +119,7 @@ body {
 
 .opacity-to-one {
   animation-name: opacityToOne;
-  animation-duration: 2s;
+  animation-duration: .8s;
   animation-fill-mode: forwards;
 }
 
