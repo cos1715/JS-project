@@ -20,14 +20,12 @@
 
 ## Mockups
 
-[wireframe](https://wireframepro.mockflow.com/view/M50616f85faf2817ae5c20f9aad6ecaec1539521806936#/page/c40699da9a6946f49538df3a59c8422b)  
+[Wireframe](https://wireframepro.mockflow.com/view/M50616f85faf2817ae5c20f9aad6ecaec1539521806936#/page/c40699da9a6946f49538df3a59c8422b)  
 
 ## Contribution guide
 
 [Please check our guide](link-to-contribution-guide)
 
 ## TODO
-
-* item 1
-* item 2
-* item 3
+* add an ability to form sublists
+* add an ability to choose date for todo list

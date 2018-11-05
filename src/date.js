@@ -1,13 +1,16 @@
 'use strict';
-const $clock = document.getElementById('clock-display');
-const $date = document.getElementById('date-display');
-const $weather = document.getElementById('weather-display');
 
-class App {
-  constructor ($clock, $date, $weather) {
-    this.$clock = $clock;
-    this.$date = $date;
-    this.$weather = $weather;
+const dateIds = {
+  clock: 'clock-display',
+  date: 'date-display',
+  weather: 'weather-display'
+};
+
+class DateClass {
+  constructor (id) {
+    this.$clock = document.getElementById(id.clock);
+    this.$date = document.getElementById(id.date);
+    this.$weather = document.getElementById(id.weather);
     this.timeFormat = 'uk-UA';
     this.clockOptions = { hour: 'numeric', minute: 'numeric' };
     this.dateOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
@@ -16,17 +19,20 @@ class App {
     this.showDate(this.$date, this.timeFormat, this.dateOptions);
     navigator.geolocation.getCurrentPosition(position => this.getWeather(position, this.$weather));
   }
+
   showDate ($el, timeFormat, options) {
     const date = new Date();
 
     $el.textContent = date.toLocaleString(timeFormat, options);
   }
+
   runClock () {
     const timeInterval = 1000;
 
     setInterval(() =>
       this.showDate(this.$clock, this.timeFormat, this.clockOptions), timeInterval);
   }
+
   async getWeather (position, $el) {
     const crd = position.coords;
     const lat = crd.latitude;
@@ -42,6 +48,6 @@ class App {
   }
 }
 
-const app = new App($clock, $date, $weather);
+const dateClass = new DateClass(dateIds);
 
-app.runClock();
+dateClass.runClock();
