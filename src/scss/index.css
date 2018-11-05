@@ -48,6 +48,12 @@ body {
   transition: all 1s;
 }
 
+.header-weather {
+  font-size: 1.5em;
+  user-select: none;
+  transition: all 1s;
+}
+
 @media screen and (max-width: 768px) {
   .header-clock {
     font-size: 30vw;
