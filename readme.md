@@ -24,7 +24,7 @@
 
 ## Contribution guide
 
-[Please check our guide](link-to-contribution-guide)
+[Please check our guide](https://github.com/cos1715/Todo-app/blob/master/CONTRIBUTING.md)
 
 ## TODO
 * add an ability to form sublists
