@@ -1,5 +1,8 @@
-import { DateClass } from './date';
-import { TodoList } from './list';
+// const DateClass = require('./date');
+// const TodoList = require('./list');
+
+import  DateClass  from './date';
+import  TodoList  from './list';
 
 const dateIds = {
   clock: 'clock-display',

@@ -1,16 +1,12 @@
+@import '../_variables';
+@import '../mixin';
 body {
-  color: #fff;
-  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  color: $white;
+  background: linear-gradient(-45deg, $gradient-colors-orange, $gradient-colors-red, $gradient-colors-blue, $gradient-colors-green);
   background-size: 400% 400%;
   font-family: 'Lato', sans-serif;
   font-size: 10px;
   animation: Gradient 15s ease infinite;
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    justify-content: flex-start;
-  }
 }
 
 @keyframes Gradient {
@@ -26,27 +22,19 @@ body {
 }
 
 .app-header {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  @include flex(center, center, column);
 }
 
 .header-clock {
-  font-size: 12rem;
-  user-select: none;
-  transition: all 1s;
+  @include info(12rem);
 }
 
 .header-date {
-  font-size: 2rem;
-  user-select: none;
-  transition: all 1s;
+  @include info(2rem);
 }
 
 .header-weather {
-  font-size: 1rem;
-  user-select: none;
-  transition: all 1s;
+  @include info(1rem);
 }
 
 @media screen and (max-width: 768px) {
@@ -59,9 +47,7 @@ body {
 }
 
 .app-main {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  @include flex(center, center, column);
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
@@ -75,22 +61,22 @@ body {
 .main-input {
   width: 45rem;
   border: none;
-  border-bottom: 0.2rem solid rgba(190, 182, 182, 0.3);
+  border-bottom: 0.2rem solid $border-color;
   outline: none;
   background-color: transparent;
-  color: #fff;
+  color: $white;
   font-size: 2rem;
   text-align: center;
   transition: all .5s;
 }
 
 .main-input:focus {
-  border-color: #fff;
+  border-color: $white;
 }
 
 .main-section {
   width: 0;
-  border-bottom: 0.2rem solid rgba(190, 182, 182, 0.3);
+  border-bottom: 0.2rem solid $border-color;
   transition: all .6s;
 }
 
@@ -119,19 +105,17 @@ body {
 }
 
 .section-ul-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(space-between, center, row);
   height: 45px;
 }
 
 .opacity-to-one {
-  animation-name: opacityToOne;
+  animation-name: Opacity-to-one;
   animation-duration: .8s;
   animation-fill-mode: forwards;
 }
 
-@keyframes opacityToOne {
+@keyframes Opacity-to-one {
   0% {
     opacity: 0;
   }
