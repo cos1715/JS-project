@@ -7,9 +7,9 @@
 
 [Demo](https://cos1715.github.io/Todo-app/)  
 > Description: "To do list" - a program which helps to create your daily list of tasks.
-
+>
 > Main idea: This app was created to organize your time and boost your productivity.
-
+>
 > For whom: "To do list" was created for busy and mind worthy persons who have a need in simple and useful program for writing their daily tasks.  
 
 ## Tech stack
