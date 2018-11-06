@@ -3,6 +3,10 @@
 Contributing to `Todo-app` is fairly easy. This document shows you how to
 get the project, run all provided tests and generate a production-ready build.
 
+## Useful links
+- [PR template](https://github.com/cos1715/Todo-app/blob/master/PULL_REQUEST_TEMPLATE.md).
+- [Issue template](https://github.com/cos1715/Todo-app/blob/master/ISSUE_TEMPLATE.md).
+
 ## Dependencies
 
 To make sure that the following instructions work, please install the following dependencies
@@ -65,7 +69,6 @@ Example: `http://localhost:8080`
   - Please provide a git message that explains what you've done.
   - Commit to the forked repository.
 - Make a pull request
-  - Before creatimg a PR please read [PR template](https://github.com/cos1715/Todo-app/blob/master/PULL_REQUEST_TEMPLATE.md).
   - Make sure you send the PR to the <code>bugfix</code> branch.
   
 
