@@ -65,7 +65,8 @@ Example: `http://localhost:8080`
   - Please provide a git message that explains what you've done.
   - Commit to the forked repository.
 - Make a pull request
+  - Before creatimg a PR please read [PR template](https://github.com/cos1715/Todo-app/blob/master/PULL_REQUEST_TEMPLATE.md).
   - Make sure you send the PR to the <code>bugfix</code> branch.
- [PR template](https://github.com/cos1715/Todo-app/blob/master/PULL_REQUEST_TEMPLATE.md) 
+  
 
 If you follow these instructions, your PR will land pretty safely in the main repo!
