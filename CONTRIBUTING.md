@@ -66,6 +66,6 @@ Example: `http://localhost:8080`
   - Commit to the forked repository.
 - Make a pull request
   - Make sure you send the PR to the <code>bugfix</code> branch.
- [PR template](https://cos1715.github.io/Todo-app/) 
+ [PR template](https://github.com/cos1715/Todo-app/blob/master/PULL_REQUEST_TEMPLATE.md) 
 
 If you follow these instructions, your PR will land pretty safely in the main repo!
