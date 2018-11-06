@@ -6,7 +6,7 @@ Describe your issue here.
 * which browser and its version
 
 ### Steps to reproduce
-Tell us how to reproduce this issue. Please provide a working demo.
+Tell us how to reproduce this issue. Please provide a working demo or some screenshots.
 
 ### Expected behaviour
 Tell us what should happen
