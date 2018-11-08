@@ -53,6 +53,7 @@
 }
 
 .list-item-remove-icon {
+  font-family: 'Fredoka One', cursive;
   color: rgba(190, 182, 182, 0.3);
   cursor: pointer;
   -webkit-transition: all .5s;

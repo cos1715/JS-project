@@ -91,7 +91,7 @@ class TodoList {
           <span class='list-item-text'>${content}</span>
           <span class='list-item-checkmark'></span>
       </label>
-      <i class='fas fa-times list-item-remove-icon'></i>`;
+      <span class="list-item-remove-icon">X</span>`;
     return $li;
   }
 

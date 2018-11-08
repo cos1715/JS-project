@@ -30,7 +30,7 @@
   height: 0.25rem;
   margin-bottom: 0.31rem;
   position: relative;
-  background: #fff;
+  background: $white;
   border-radius: 0.18rem;
   z-index: 1;
   transform-origin: 0.25rem 0;
@@ -48,7 +48,7 @@
 .aside-menu-toggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #fff;
+  background: $white;
 }
 
 .aside-menu-toggle input:checked~span:nth-last-child(3) {
@@ -65,8 +65,7 @@
   margin: -6.25rem 0 0 -3.12rem;
   padding: 3.12rem;
   padding-top: 7.8rem;
-  background-color: $checkbox-color-hover;
-  border: 0.18rem solid $border-color;
+  background-color: $aside-menu-color;
   border-radius: 0 0 0.5rem 0;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
