@@ -12,6 +12,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .header-clock {
@@ -50,6 +52,12 @@
   }
   .header-date {
     font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .app-header {
+    margin-top: 3rem;
   }
 }
 /*# sourceMappingURL=header.css.map */

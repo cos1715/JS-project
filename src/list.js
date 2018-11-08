@@ -11,7 +11,6 @@ class TodoList {
     this.$todoListSection = document.getElementById(id.todoListSection);
     this.$todoInput = document.getElementById(id.todoInput);
     this.$todoList = document.getElementById(id.todoList);
-    this.$dialog = document.getElementById('dialog-window');
     this.todoArr = [];
 
     this.setEventListeners();
