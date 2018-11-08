@@ -20,7 +20,7 @@ class DateClass {
     this.showDate(this.$clock, this.timeFormat, this.clockOptions);
     this.showDate(this.$date, this.timeFormat, this.dateOptions);
     navigator.geolocation.getCurrentPosition(
-      position => this.getWeather(position, this.$weather), 
+      position => this.getWeather(position, this.$weather),
       () => this.errorHandle(this.$forecast));
   }
 
@@ -54,22 +54,29 @@ class DateClass {
     const crd = position.coords;
     const lat = crd.latitude;
     const long = crd.longitude;
-    const response = await fetch(`https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20
+    try {
+      const response = await fetch(`https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20
     weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20
     geo.places(1)%20where%20text%3D"(${lat},${long})")and%20
     u%3D%27c%27&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`);
-    const data = await response.json();
-    const forecast = data.query.results.channel.item.forecast;
+      const data = await response.json();
+      const forecast = data.query.results.channel.item.forecast;
 
-    forecast.forEach((item, i) => {
-      if (i > 0 && i < 6) {
-        this.$forecast.appendChild(this.createforecastElement(item));
-      }
-    });
+      forecast.forEach((item, i) => {
+        if (i > 0 && i < 6) {
+          this.$forecast.appendChild(this.createforecastElement(item));
+        }
+      });
 
-    $el.textContent = `${data.query.results.channel.location.city} 
+      $el.textContent = `${data.query.results.channel.location.city} 
     ${data.query.results.channel.item.condition.temp}°C`;
-    $el.classList.add('opacity-to-one');
+      $el.classList.add('opacity-to-one');
+
+    } catch (error) {
+      this.errorHandle(this.$forecast);
+    }
+
+
   }
   errorHandle ($forecast) {
     $forecast.textContent = 'Please Enable Geoloaction';

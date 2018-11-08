@@ -35,7 +35,7 @@
     <div id="date-display" class="header-date"></div>
     <div id="weather-display" class="header-weather"></div>
   </header>
-  
+
   <main class="app-main">
     <label for="todo-input" class="main-label">What's on your mind?</label>
     <input type="text" id="todo-input" class="main-input" maxlength="40" />
@@ -45,6 +45,18 @@
     </section>
   </main>
 
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').then(function (registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
 
   <script src="./src/date.js"></script>
   <script src="./src/list.js"></script>
