@@ -1,6 +1,3 @@
-// const DateClass = require('./date');
-// const TodoList = require('./list');
-
 import  DateClass  from './date';
 import  TodoList  from './list';
 

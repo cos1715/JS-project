@@ -1,0 +1,25 @@
+@import '../../mixin';
+.app-header {
+  @include flex(center, center, column);
+}
+
+.header-clock {
+  @include info(12rem);
+}
+
+.header-date {
+  @include info(2rem);
+}
+
+.header-weather {
+  @include info(1rem);
+}
+
+@media screen and (max-width: 768px) {
+  .header-clock {
+    font-size: 6rem;
+  }
+  .header-date {
+    font-size: 1.5rem;
+  }
+}

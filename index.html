@@ -8,20 +8,34 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
-  <link rel="stylesheet" href="./src/scss/components/main.css">
-  <link rel="stylesheet" href="./src/scss/components/checkbox.css">
+  <link rel="stylesheet" href="./src/scss/components/header/header.css">
+  <link rel="stylesheet" href="./src/scss/components/main/main.css">
+  <link rel="stylesheet" href="./src/scss/components/checkbox/checkbox.css">
+  <link rel="stylesheet" href="./src/scss/components/aside/aside.css">
   <link rel="shortcut icon" href="./src/image/browser-icon.png" />
   <title>To do list</title>
 </head>
 
 <body>
-
+  <aside class="app-aside">
+    <div class="aside-menu-toggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul class="aside-menu">
+        <p class="section-header">Forecast</p>
+        <div id="div-forecast">
+      </ul>
+    </div>
+  </aside>
 
   <header class="app-header">
     <div id="clock-display" class="header-clock"></div>
     <div id="date-display" class="header-date"></div>
     <div id="weather-display" class="header-weather"></div>
   </header>
+  
   <main class="app-main">
     <label for="todo-input" class="main-label">What's on your mind?</label>
     <input type="text" id="todo-input" class="main-input" maxlength="40" />
@@ -30,6 +44,7 @@
       </ul>
     </section>
   </main>
+
 
   <script src="./src/date.js"></script>
   <script src="./src/list.js"></script>

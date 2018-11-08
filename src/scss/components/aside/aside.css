@@ -1,0 +1,117 @@
+.app-aside {
+  width: 90%;
+}
+
+.aside-menu-toggle {
+  display: block;
+  position: relative;
+  top: 3.1rem;
+  left: 3.1rem;
+  z-index: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.aside-menu-toggle input {
+  display: block;
+  width: 2.5rem;
+  height: 2rem;
+  position: absolute;
+  top: -0.4rem;
+  left: -0.3rem;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+.aside-menu-toggle span {
+  display: block;
+  width: 2rem;
+  height: 0.25rem;
+  margin-bottom: 0.31rem;
+  position: relative;
+  background: #fff;
+  border-radius: 0.18rem;
+  z-index: 1;
+  -webkit-transform-origin: 0.25rem 0;
+          transform-origin: 0.25rem 0;
+  -webkit-transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.aside-menu-toggle span:first-child {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+.aside-menu-toggle span:nth-last-child(2) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+.aside-menu-toggle input:checked ~ span {
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(-2px, -1px);
+          transform: rotate(45deg) translate(-2px, -1px);
+  background: #fff;
+}
+
+.aside-menu-toggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.aside-menu-toggle input:checked ~ span:nth-last-child(2) {
+  -webkit-transform: rotate(-45deg) translate(0, -1px);
+          transform: rotate(-45deg) translate(0, -1px);
+}
+
+.aside-menu {
+  position: absolute;
+  margin: -6.25rem 0 0 -3.12rem;
+  padding: 3.12rem;
+  padding-top: 7.8rem;
+  background-color: rgba(190, 182, 182, 0.2);
+  border: 0.18rem solid rgba(190, 182, 182, 0.3);
+  border-radius: 0 0 0.5rem 0;
+  -webkit-font-smoothing: antialiased;
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  -webkit-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.aside-menu-toggle input:checked ~ ul {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.section-header {
+  margin: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.aside-section {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0 0.3rem 0.3rem 0;
+}
+
+.section-article {
+  font-size: 0.8rem;
+}
+
+.forecast-err {
+  margin-left: .5rem;
+  font-size: 0.8rem;
+}
+/*# sourceMappingURL=aside.css.map */

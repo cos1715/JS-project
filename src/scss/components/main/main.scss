@@ -1,11 +1,13 @@
-@import '../_variables';
-@import '../mixin';
+@import '../../mixin';
+@import '../../variables';
 body {
-  color: $white;
+  margin: 0;
+  padding: 0;
   background: linear-gradient(-45deg, $gradient-colors-orange, $gradient-colors-red, $gradient-colors-blue, $gradient-colors-green);
   background-size: 400% 400%;
   font-family: 'Lato', sans-serif;
   font-size: 10px;
+  color: $white;
   animation: Gradient 15s ease infinite;
 }
 
@@ -18,31 +20,6 @@ body {
   }
   100% {
     background-position: 0% 50%
-  }
-}
-
-.app-header {
-  @include flex(center, center, column);
-}
-
-.header-clock {
-  @include info(12rem);
-}
-
-.header-date {
-  @include info(2rem);
-}
-
-.header-weather {
-  @include info(1rem);
-}
-
-@media screen and (max-width: 768px) {
-  .header-clock {
-    font-size: 6rem;
-  }
-  .header-date {
-    font-size: 1.5rem;
   }
 }
 
@@ -98,7 +75,7 @@ body {
 }
 
 .main-section-ul {
-  height: 0px;
+  height: 0;
   padding: 0 2rem;
   list-style-type: none;
   transition: all .6s;
@@ -106,7 +83,7 @@ body {
 
 .section-ul-li {
   @include flex(space-between, center, row);
-  height: 45px;
+  height: 2.8rem;
 }
 
 .opacity-to-one {

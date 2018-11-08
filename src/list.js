@@ -8,12 +8,17 @@ const listIds = {
 
 class TodoList {
   constructor (id) {
-
     this.$todoListSection = document.getElementById(id.todoListSection);
     this.$todoInput = document.getElementById(id.todoInput);
     this.$todoList = document.getElementById(id.todoList);
+    this.$dialog = document.getElementById('dialog-window');
     this.todoArr = [];
 
+    this.setEventListeners();
+    this.storegeEnabled = this.checkLocalStorage();
+  }
+
+  setEventListeners () {
     this.$todoInput.addEventListener('keyup',
       () => this.createTodo(event));
 
@@ -23,17 +28,58 @@ class TodoList {
     this.$todoInput.addEventListener('focus',
       () => this.addClass(
         this.$todoListSection,
-        'main-section-active',
-        'main-section-focus'
+        'main-section-focus',
+        'main-section-active'
       ));
 
     this.$todoInput.addEventListener('blur',
-      () => this.removeClass(
-        this.$todoListSection,
-        this.$todoList,
-        'main-section-active',
-        'main-section-focus'
-      ));
+      () => {
+        this.removeClass(
+          this.$todoListSection,
+          this.$todoList,
+          'main-section-focus'
+        );
+        this.removeClass(
+          this.$todoListSection,
+          this.$todoList,
+          'main-section-active'
+        );
+      });
+  }
+
+  checkLocalStorage () {
+    if (typeof (Storage) !== 'undefined') {
+      const storage = localStorage.getItem('todoArr');
+      if (storage === null) {
+        localStorage.setItem('todoArr', '');
+      } else {
+        if (!(storage === ''))
+          this.restoreSession(storage);
+      }
+      return true;
+    }
+    return false;
+  }
+
+  restoreSession (storage) {
+    this.addClass(this.$todoListSection, 'main-section-active');
+    this.todoArr = this.todoArr.concat(storage.split(','));
+    this.todoArr = this.todoArr.filter((item, index) => this.todoArr.indexOf(item) === index);
+    this.todoArr.forEach(item => {
+      this.appendTodo(item);
+    });
+  }
+
+  appendTodo (value) {
+    const $el = this.createTodoElement(value);
+
+    this.calculateHeight(this.$todoList);
+    this.$todoInput.value = '';
+    this.$todoList.appendChild($el);
+    $el.classList.add('opacity-to-one');
+    $el.addEventListener('animationend', () => {
+      this.$todoInput.blur();
+    });
   }
 
   createTodoElement (content) {
@@ -41,29 +87,22 @@ class TodoList {
 
     $li.className = 'section-ul-li';
     $li.innerHTML = `
-      <label class="list-item-label">
-          <input type="checkbox" class="list-item-checkbox" />
-          <span class="list-item-text">${content}</span>
-          <span class="list-item-checkmark"></span>
+      <label class='list-item-label'>
+          <input type='checkbox' class='list-item-checkbox' />
+          <span class='list-item-text'>${content}</span>
+          <span class='list-item-checkmark'></span>
       </label>
-      <i class="fas fa-times list-item-remove-icon"></i>`;
+      <i class='fas fa-times list-item-remove-icon'></i>`;
     return $li;
   }
 
   createTodo ({ key, target }) {
     if (key === 'Enter' && target.value.trim()) {
-      const $el = this.createTodoElement(target.value);
-
       this.todoArr.push(target.value);
-      const height = 45 * this.todoArr.length;
-      this.$todoList.style.height = `${height}px`;
-
-      this.$todoList.appendChild($el);
-      $el.classList.add('opacity-to-one');
-      $el.addEventListener('animationend', () => {
-        this.$todoInput.value = '';
-        this.$todoInput.blur();
-      });
+      this.appendTodo(target.value);
+      if (this.storegeEnabled) {
+        localStorage.setItem('todoArr', this.todoArr);
+      }
     }
   }
 
@@ -74,31 +113,44 @@ class TodoList {
 
     if (isRemove) {
       const index = this.todoArr.indexOf(text);
-      const height = 45 * this.todoArr.length;
 
       this.todoArr.splice(index, 1);
-      this.$todoList.style.height = `${height}px`;
+      this.calculateHeight(this.$todoList);
       this.$todoList.removeChild($todo);
       this.removeClass(
         this.$todoListSection,
         this.$todoList,
-        'main-section-active',
         'main-section-focus'
       );
+      this.removeClass(
+        this.$todoListSection,
+        this.$todoList,
+        'main-section-active'
+      );
+
+      if (this.storegeEnabled) {
+        localStorage.setItem('todoArr', this.todoArr);
+      }
     }
+  }
+
+  calculateHeight ($el) {
+    const liHeight = 45;
+    const height = liHeight * this.todoArr.length;
+    $el.style.height = `${height}px`;
   }
 
   addClass ($el, ...className) {
     $el.classList.add(...className);
   }
 
-  removeClass ($el, $list, ...className) {
+  removeClass ($el, $list, className) {
     const childNodesLength = 1;
-
     if ($list.childNodes.length === childNodesLength) {
-      $el.classList.remove(...className);
+      $el.classList.remove(className);
     } else {
-      $el.classList.remove(className[1]);
+      if (!(className === 'main-section-active'))
+        $el.classList.remove(className);
     }
   }
 }
