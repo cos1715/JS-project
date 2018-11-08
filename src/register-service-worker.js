@@ -3,7 +3,3 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/Todo-app/sw.js', {scope: '/Todo-app/'});
   });
 }
-
-// if (navigator.serviceWorker) {
-//   navigator.serviceWorker.register()
-// }
