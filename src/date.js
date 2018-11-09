@@ -88,3 +88,5 @@ class DateClass {
 const dateClass = new DateClass(dateIds);
 
 dateClass.runClock();
+
+module.exports = DateClass.getWeather;
