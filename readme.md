@@ -4,13 +4,15 @@
 * Front-camp [facebook](https://www.facebook.com/groups/270300106928894)
 
 ## Todo-app
-
 [Demo](https://cos1715.github.io/Todo-app/)  
 > Description: "To do list" - a program which helps to create your daily list of tasks.
 >
 > Main idea: This app was created to organize your time and boost your productivity.
 >
 > For whom: "To do list" was created for busy and mind worthy persons who have a need in simple and useful program for writing their daily tasks.  
+
+## Build Status
+[![Build Status](https://travis-ci.org/cos1715/Todo-app.png)](https://travis-ci.org/cos1715/Todo-app)
 
 ## Tech stack
 
